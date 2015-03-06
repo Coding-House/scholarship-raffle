@@ -51,11 +51,13 @@ angular.module('rappleApp')
   clock();
 
   var interval = $interval( function() {
-    if ($scope.counter === 0) {
-      $interval.cancel(interval);
+    if ($scope.counter <= 0) {
       $http.get('/api/getRandom?max=10').success(function(response) {
-        $scope.winner = $scope.applicants[response.winnerIndex];
-        $scope.runnerUp = $scope.applicants[response.runnerUpIndex];
+        if (response.finalPick) {
+          $scope.winner = $scope.applicants[response.winnerIndex];
+          $scope.runnerUp = $scope.applicants[response.runnerUpIndex];
+          $interval.cancel(interval);
+        }
       });
       return ;
     }

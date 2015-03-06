@@ -24,7 +24,7 @@ Router.get('/getRandom' , function(req, res) {
   } else {
     console.log('using past randoms');
   }
-  res.json({winnerIndex: winnerIndex , runnerUpIndex: runnerUpIndex })
+  res.json({ winnerIndex: winnerIndex , runnerUpIndex: runnerUpIndex, finalPick: finalPick })
 });
 
 module.exports = Router ;
