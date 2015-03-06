@@ -9,11 +9,16 @@ Number.prototype.pad = function(size) {
 angular.module('rappleApp')
 .controller('MainCtrl', function ($scope, $http, $interval) {
   $scope.applicants = [
-    'Applicant 1',
-    'Applicant 2',
-    'Applicant 3',
-    'Applicant 4',
-    'Applicant 5'
+    'SarahJessica Leivers',
+    'Andreca Sergiu',
+    'Evan Gatchell',
+    'Felix Oyoo Omondi',
+    'Renee Osbourne',
+    'Frank Velasquez',
+    'Kasey Robinson',
+    'Kathy Wheeler',
+    'Gerald Anekwe',
+    'Luke Bickell'
   ];
 
   var dateDiffInSeconds = function (a, b) {
