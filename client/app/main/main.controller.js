@@ -2,10 +2,12 @@
 
 angular.module('rappleApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+    $scope.applicants = [ 'Aziz' , 'his bro ' , 'Samer' , ' Samer 2',  'Aziz' , 'his bro ' , 'Samer' , ' Samer 2',  'Aziz' , 'his bro '];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+    $http.get('/api/getRandom?max=10').success(function(response) {
+      console.log(response);
+      $scope.winner = $scope.applicants[response.winnerIndex];
+      $scope.runnerUp = $scope.applicants[response.runnerUpIndex];
     });
 
   });
