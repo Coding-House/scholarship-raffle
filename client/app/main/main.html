@@ -1,40 +1,55 @@
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>Coding House Scholarship Raffle</h1>
-
-  </div>
-</header>
-
 <div class="container">
+
+  <div class="jumbotron">
+    <h2 class="text-center">Coding House Scholarship Raffle</h2>
+    <div id="countdown" class="lead">
+      <h1 class="text-center" data-counter="{{counter}}">
+        <span class="span-numbers">{{days}}</span> :
+        <span class="span-numbers">{{hours}}</span> :
+        <span class="span-numbers">{{minutes}}</span> :
+        <span class="span-numbers">{{seconds}}</span>
+      </h1>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-sm-6">
-      <h1 class="page-header">Runners:</h1>
-      <ul class="nav nav-tabs nav-stacked " ng-repeat="applicant in applicants track by $index">
-        <li><a href="#" >{{applicant}}</a></li>
-      </ul>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Finalists</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="" ng-repeat="applicant in applicants track by $index">
+            <li><a href="#" >{{applicant}}</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="col-sm-6">
-      <ul class="nav nav-tabs nav-stacked ">
-        <li>
-          <h4 class="page-header">Timer</h4>
-          {{counter}}
-        </li
-        <li>
-          <h4 class="page-header">Winner</h4>
-        </li>
-        <li>{{winner}} is a winner</li>
-        <li>
-          <h4 class="page-header">Runner up</h4>
-        </li>
-        <li>{{runnerUp}} is a runner up</li>
-      </ul>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">The Winner Is</h3>
+        </div>
+        <div class="panel-body">
+          <h2>{{winner}}</h2>
+        </div>
+      </div>
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <h3 class="panel-title">The Runner-up Is</h3>
+        </div>
+        <div class="panel-body">
+          <h2>{{runnerUp}}</h2>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<footer class="footer">
-  <div class="container">
-    Good luck
-  </div>
-</footer>
+  <footer class="footer">
+    <div class="container">
+      Good luck for all. #EveryBodyIsAWinner
+    </div>
+  </footer>
+
+</div>
